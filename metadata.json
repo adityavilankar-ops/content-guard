@@ -1,0 +1,6 @@
+{
+  "name": "ContentGuard",
+  "description": "AI Content Rule Checker featuring interactive custom cursor dynamics and rich scroll-driven animations with Gemini-powered compliance checks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Space Grotesk", sans-serif;
+}
+
+/* Base custom styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #050505; /* Blackish immersive canvas */
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #11131c;
+  border-radius: 9999px;
+  border: 2px solid #050505;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d2133;
+}
+
+/* Hide default cursor only if hover is supported on primary device */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-active, 
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Grid overlay background */
+.grid-overlay {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+/* Keyframes and custom animations */
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.15);
+    opacity: 0.35;
+  }
+  66% {
+    transform: translate(-20px, 40px) scale(0.9);
+    opacity: 0.2;
+  }
+}
+
+.animate-drift-slow {
+  animation: drift 25s ease-in-out infinite;
+}
+
+.animate-drift-slower {
+  animation: drift 35s ease-in-out infinite reverse;
+}
+
+/* Custom glow effect styling */
+.glow-text-teal {
+  text-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+}
+
+.glow-text-indigo {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}
+
+.glow-text-emerald {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.glow-text-gold {
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
+}
+
+/* Custom print layouts for PDF/Print report export */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-card {
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+    background: white !important;
+    color: black !important;
+  }
+}
+
+@keyframes poonam-stardust-fade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+}
+
+.animate-poonam-stardust {
+  animation: poonam-stardust-fade 600ms ease-out forwards;
+  will-change: transform, opacity;
+}
